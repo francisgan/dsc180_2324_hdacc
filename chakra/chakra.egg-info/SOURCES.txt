@@ -1,0 +1,17 @@
+LICENSE.md
+README.md
+setup.py
+chakra.egg-info/PKG-INFO
+chakra.egg-info/SOURCES.txt
+chakra.egg-info/dependency_links.txt
+chakra.egg-info/top_level.txt
+et_converter/et_converter.py
+et_converter/flexflow2chakra_converter.py
+et_converter/pytorch2chakra_converter.py
+et_converter/text2chakra_converter.py
+et_def/et_def_pb2.py
+et_visualizer/et_visualizer.py
+third_party/utils/protolib.py
+timeline_visualizer/timeline_visualizer.py
+utils/et_generator/et_generator.py
+utils/et_jsonizer/et_jsonizer.py

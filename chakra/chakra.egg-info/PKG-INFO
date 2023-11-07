@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: chakra
+Version: 0.0.0
+Home-page: https://github.com/mlcommons/chakra
+Author: MLCommons
+Author-email: chakra@mlcommons.org
+Requires-Python: >=3.8
+License-File: LICENSE.md
