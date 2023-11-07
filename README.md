@@ -4,21 +4,21 @@ UCSD DSC180 23-24 Hardware accelarating in ML Group
 
 Environment Requirement: Python 3.9 or higher
 
-Setup instruction:
+# Setup instruction:
 enter /chakra, open Command, run follow code:
 
 $ pip install -r requirements.txt
 
 $ python setup.py install
 
-$Data:$
+# Data:
 
 download dataset:https://archive.ics.uci.edu/dataset/231/pamap2+physical+activity+monitoring
 
 put .dat files in /data, modify variable path in jupyter notebook
 
 
-$Error:$
+# Error Solution:
 
 If you see "AttributeError: module 'collections' has no attribute 'xxx'"
 
@@ -28,6 +28,6 @@ change from: "from collections import xxx"
 
 to           "from collections.abc import xxx"
 
-$Begin:$
+# Begin:
 
 test jupyter notebook file shows how we run HAR model
