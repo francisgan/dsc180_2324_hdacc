@@ -1,0 +1,261 @@
+{
+  "schema": "1.0.1", "pid": 15370, "time": "2023-12-11 16:35:54", "start_ts": 3999377001,
+  "nodes": [
+    {
+      "name": "[pytorch|profiler|execution_trace|thread]", "id": 2, "rf_id": 0, "parent": 1, "fw_parent": 0, "seq_id": -1, "scope": 7, "tid": 1, "fw_tid": 0, "op_schema": "",
+      "inputs": [], "input_shapes": [], "input_types": [],
+      "outputs": [], "output_shapes": [], "output_types": []
+    },
+    {
+      "name": "aten::view", "id": 6, "rf_id": 2, "parent": 5, "fw_parent": 0, "seq_id": 20, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::view(Tensor(a) self, SymInt[] size) -> Tensor(a)",
+      "inputs": [[3,4,0,20326518,4,"cpu"],[1,-1]], "input_shapes": [[1,376417,54],[[],[]]], "input_types": ["Tensor(float)","GenericList[Int,Int]"],
+      "outputs": [[7,4,0,20326518,4,"cpu"]], "output_shapes": [[1,20326518]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::reshape", "id": 5, "rf_id": 1, "parent": 2, "fw_parent": 0, "seq_id": 20, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::reshape(Tensor(a) self, SymInt[] shape) -> Tensor(a)",
+      "inputs": [[3,4,0,20326518,4,"cpu"],[1,-1]], "input_shapes": [[1,376417,54],[[],[]]], "input_types": ["Tensor(float)","GenericList[Int,Int]"],
+      "outputs": [[7,4,0,20326518,4,"cpu"]], "output_shapes": [[1,20326518]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::as_strided", "id": 15, "rf_id": 6, "parent": 14, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::as_strided(Tensor(a) self, SymInt[] size, SymInt[] stride, SymInt? storage_offset=None) -> Tensor(a)",
+      "inputs": [[8,9,0,2601794304,4,"cpu"],[20326518,128],[1,20326518],"<None>"], "input_shapes": [[128,20326518],[[],[]],[[],[]],[]], "input_types": ["Tensor(float)","GenericList[Int,Int]","GenericList[Int,Int]","None"],
+      "outputs": [[16,9,0,2601794304,4,"cpu"]], "output_shapes": [[20326518,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::transpose", "id": 14, "rf_id": 5, "parent": 13, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::transpose.int(Tensor(a) self, int dim0, int dim1) -> Tensor(a)",
+      "inputs": [[8,9,0,2601794304,4,"cpu"],0,1], "input_shapes": [[128,20326518],[],[]], "input_types": ["Tensor(float)","Int","Int"],
+      "outputs": [[16,9,0,2601794304,4,"cpu"]], "output_shapes": [[20326518,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::t", "id": 13, "rf_id": 4, "parent": 12, "fw_parent": 0, "seq_id": 20, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::t(Tensor(a) self) -> Tensor(a)",
+      "inputs": [[8,9,0,2601794304,4,"cpu"]], "input_shapes": [[128,20326518]], "input_types": ["Tensor(float)"],
+      "outputs": [[16,9,0,2601794304,4,"cpu"]], "output_shapes": [[20326518,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::as_strided", "id": 19, "rf_id": 9, "parent": 18, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::as_strided(Tensor(a) self, SymInt[] size, SymInt[] stride, SymInt? storage_offset=None) -> Tensor(a)",
+      "inputs": [[10,11,0,128,4,"cpu"],[1,128],[128,1],"<None>"], "input_shapes": [[128],[[],[]],[[],[]],[]], "input_types": ["Tensor(float)","GenericList[Int,Int]","GenericList[Int,Int]","None"],
+      "outputs": [[20,11,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::expand", "id": 18, "rf_id": 8, "parent": 17, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::expand(Tensor(a) self, SymInt[] size, *, bool implicit=False) -> Tensor(a)",
+      "inputs": [[10,11,0,128,4,"cpu"],[1,128],false], "input_shapes": [[128],[[],[]],[]], "input_types": ["Tensor(float)","GenericList[Int,Int]","Bool"],
+      "outputs": [[20,11,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::copy_", "id": 23, "rf_id": 10, "parent": 17, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::copy_(Tensor(a!) self, Tensor src, bool non_blocking=False) -> Tensor(a!)",
+      "inputs": [[21,22,0,128,4,"cpu"],[20,11,0,128,4,"cpu"],false], "input_shapes": [[1,128],[1,128],[]], "input_types": ["Tensor(float)","Tensor(float)","Bool"],
+      "outputs": [[21,22,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::resolve_conj", "id": 24, "rf_id": 11, "parent": 17, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::resolve_conj(Tensor(a) self) -> Tensor(a)",
+      "inputs": [[21,22,0,128,4,"cpu"]], "input_shapes": [[1,128]], "input_types": ["Tensor(float)"],
+      "outputs": [[21,22,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::resolve_conj", "id": 25, "rf_id": 12, "parent": 17, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::resolve_conj(Tensor(a) self) -> Tensor(a)",
+      "inputs": [[7,4,0,20326518,4,"cpu"]], "input_shapes": [[1,20326518]], "input_types": ["Tensor(float)"],
+      "outputs": [[7,4,0,20326518,4,"cpu"]], "output_shapes": [[1,20326518]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::addmm", "id": 17, "rf_id": 7, "parent": 12, "fw_parent": 0, "seq_id": 21, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::addmm(Tensor self, Tensor mat1, Tensor mat2, *, Scalar beta=1, Scalar alpha=1) -> Tensor",
+      "inputs": [[10,11,0,128,4,"cpu"],[7,4,0,20326518,4,"cpu"],[16,9,0,2601794304,4,"cpu"],1,1], "input_shapes": [[128],[1,20326518],[20326518,128],[],[]], "input_types": ["Tensor(float)","Tensor(float)","Tensor(float)","Int","Int"],
+      "outputs": [[21,22,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::linear", "id": 12, "rf_id": 3, "parent": 2, "fw_parent": 0, "seq_id": 20, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::linear(Tensor input, Tensor weight, Tensor? bias=None) -> Tensor",
+      "inputs": [[7,4,0,20326518,4,"cpu"],[8,9,0,2601794304,4,"cpu"],[10,11,0,128,4,"cpu"]], "input_shapes": [[1,20326518],[128,20326518],[128]], "input_types": ["Tensor(float)","Tensor(float)","Tensor(float)"],
+      "outputs": [[21,22,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::clamp_min", "id": 27, "rf_id": 14, "parent": 26, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::clamp_min(Tensor self, Scalar min) -> Tensor",
+      "inputs": [[21,22,0,128,4,"cpu"],0], "input_shapes": [[1,128],[]], "input_types": ["Tensor(float)","Int"],
+      "outputs": [[28,29,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::relu", "id": 26, "rf_id": 13, "parent": 2, "fw_parent": 0, "seq_id": 22, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::relu(Tensor self) -> Tensor",
+      "inputs": [[21,22,0,128,4,"cpu"]], "input_shapes": [[1,128]], "input_types": ["Tensor(float)"],
+      "outputs": [[28,29,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::empty", "id": 32, "rf_id": 17, "parent": 31, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::empty.memory_format(SymInt[] size, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, MemoryFormat? memory_format=None) -> Tensor",
+      "inputs": [[1,128],6,0,"cpu","<None>",0], "input_shapes": [[[],[]],[],[],[],[],[]], "input_types": ["GenericList[Int,Int]","Int","Int","Device","None","Int"],
+      "outputs": [[33,34,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::empty_like", "id": 31, "rf_id": 16, "parent": 30, "fw_parent": 0, "seq_id": 23, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::empty_like(Tensor self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, MemoryFormat? memory_format=None) -> Tensor",
+      "inputs": [[28,29,0,128,4,"cpu"],"<None>","<None>","<None>","<None>",0], "input_shapes": [[1,128],[],[],[],[],[]], "input_types": ["Tensor(float)","None","None","None","None","Int"],
+      "outputs": [[33,34,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::bernoulli_", "id": 35, "rf_id": 18, "parent": 30, "fw_parent": 0, "seq_id": 23, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::bernoulli_.float(Tensor(a!) self, float p=0.5, *, Generator? generator=None) -> Tensor(a!)",
+      "inputs": [[33,34,0,128,4,"cpu"],0.500000,"<None>"], "input_shapes": [[1,128],[],[]], "input_types": ["Tensor(float)","Double","None"],
+      "outputs": [[33,34,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::empty_strided", "id": 42, "rf_id": 23, "parent": 41, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::empty_strided(SymInt[] size, SymInt[] stride, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None) -> Tensor",
+      "inputs": [[],[],6,0,"cpu",false], "input_shapes": [[],[],[],[],[],[]], "input_types": ["GenericList[]","GenericList[]","Int","Int","Device","Bool"],
+      "outputs": [[43,44,0,1,4,"cpu"]], "output_shapes": [[]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::copy_", "id": 45, "rf_id": 24, "parent": 41, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::copy_(Tensor(a!) self, Tensor src, bool non_blocking=False) -> Tensor(a!)",
+      "inputs": [[43,44,0,1,4,"cpu"],[37,38,0,1,8,"cpu"],false], "input_shapes": [[],[],[]], "input_types": ["Tensor(float)","Tensor(double)","Bool"],
+      "outputs": [[43,44,0,1,4,"cpu"]], "output_shapes": [[]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::_to_copy", "id": 41, "rf_id": 22, "parent": 40, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::_to_copy(Tensor self, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None, bool non_blocking=False, MemoryFormat? memory_format=None) -> Tensor",
+      "inputs": [[37,38,0,1,8,"cpu"],6,"<None>","<None>","<None>",false,"<None>"], "input_shapes": [[],[],[],[],[],[],[]], "input_types": ["Tensor(double)","Int","None","None","None","Bool","None"],
+      "outputs": [[43,44,0,1,4,"cpu"]], "output_shapes": [[]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::to", "id": 40, "rf_id": 21, "parent": 39, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::to.dtype(Tensor(a) self, ScalarType dtype, bool non_blocking=False, bool copy=False, MemoryFormat? memory_format=None) -> Tensor(a)",
+      "inputs": [[37,38,0,1,8,"cpu"],6,false,false,"<None>"], "input_shapes": [[],[],[],[],[]], "input_types": ["Tensor(double)","Int","Bool","Bool","None"],
+      "outputs": [[43,44,0,1,4,"cpu"]], "output_shapes": [[]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::div_", "id": 39, "rf_id": 20, "parent": 36, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::div_.Tensor(Tensor(a!) self, Tensor other) -> Tensor(a!)",
+      "inputs": [[33,34,0,128,4,"cpu"],[37,38,0,1,8,"cpu"]], "input_shapes": [[1,128],[]], "input_types": ["Tensor(float)","Tensor(double)"],
+      "outputs": [[33,34,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::div_", "id": 36, "rf_id": 19, "parent": 30, "fw_parent": 0, "seq_id": 23, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::div_.Scalar(Tensor(a!) self, Scalar other) -> Tensor(a!)",
+      "inputs": [[33,34,0,128,4,"cpu"],0.500000], "input_shapes": [[1,128],[]], "input_types": ["Tensor(float)","Double"],
+      "outputs": [[33,34,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::mul", "id": 46, "rf_id": 25, "parent": 30, "fw_parent": 0, "seq_id": 23, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::mul.Tensor(Tensor self, Tensor other) -> Tensor",
+      "inputs": [[28,29,0,128,4,"cpu"],[33,34,0,128,4,"cpu"]], "input_shapes": [[1,128],[1,128]], "input_types": ["Tensor(float)","Tensor(float)"],
+      "outputs": [[47,48,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::dropout", "id": 30, "rf_id": 15, "parent": 2, "fw_parent": 0, "seq_id": 23, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::dropout(Tensor input, float p, bool train) -> Tensor",
+      "inputs": [[28,29,0,128,4,"cpu"],0.500000,true], "input_shapes": [[1,128],[],[]], "input_types": ["Tensor(float)","Double","Bool"],
+      "outputs": [[47,48,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::as_strided", "id": 56, "rf_id": 29, "parent": 55, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::as_strided(Tensor(a) self, SymInt[] size, SymInt[] stride, SymInt? storage_offset=None) -> Tensor(a)",
+      "inputs": [[49,50,0,8192,4,"cpu"],[128,64],[1,128],"<None>"], "input_shapes": [[64,128],[[],[]],[[],[]],[]], "input_types": ["Tensor(float)","GenericList[Int,Int]","GenericList[Int,Int]","None"],
+      "outputs": [[57,50,0,8192,4,"cpu"]], "output_shapes": [[128,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::transpose", "id": 55, "rf_id": 28, "parent": 54, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::transpose.int(Tensor(a) self, int dim0, int dim1) -> Tensor(a)",
+      "inputs": [[49,50,0,8192,4,"cpu"],0,1], "input_shapes": [[64,128],[],[]], "input_types": ["Tensor(float)","Int","Int"],
+      "outputs": [[57,50,0,8192,4,"cpu"]], "output_shapes": [[128,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::t", "id": 54, "rf_id": 27, "parent": 53, "fw_parent": 0, "seq_id": 24, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::t(Tensor(a) self) -> Tensor(a)",
+      "inputs": [[49,50,0,8192,4,"cpu"]], "input_shapes": [[64,128]], "input_types": ["Tensor(float)"],
+      "outputs": [[57,50,0,8192,4,"cpu"]], "output_shapes": [[128,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::as_strided", "id": 60, "rf_id": 32, "parent": 59, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::as_strided(Tensor(a) self, SymInt[] size, SymInt[] stride, SymInt? storage_offset=None) -> Tensor(a)",
+      "inputs": [[51,52,0,64,4,"cpu"],[1,64],[64,1],"<None>"], "input_shapes": [[64],[[],[]],[[],[]],[]], "input_types": ["Tensor(float)","GenericList[Int,Int]","GenericList[Int,Int]","None"],
+      "outputs": [[61,52,0,64,4,"cpu"]], "output_shapes": [[1,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::expand", "id": 59, "rf_id": 31, "parent": 58, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::expand(Tensor(a) self, SymInt[] size, *, bool implicit=False) -> Tensor(a)",
+      "inputs": [[51,52,0,64,4,"cpu"],[1,64],false], "input_shapes": [[64],[[],[]],[]], "input_types": ["Tensor(float)","GenericList[Int,Int]","Bool"],
+      "outputs": [[61,52,0,64,4,"cpu"]], "output_shapes": [[1,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::copy_", "id": 64, "rf_id": 33, "parent": 58, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::copy_(Tensor(a!) self, Tensor src, bool non_blocking=False) -> Tensor(a!)",
+      "inputs": [[62,63,0,64,4,"cpu"],[61,52,0,64,4,"cpu"],false], "input_shapes": [[1,64],[1,64],[]], "input_types": ["Tensor(float)","Tensor(float)","Bool"],
+      "outputs": [[62,63,0,64,4,"cpu"]], "output_shapes": [[1,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::resolve_conj", "id": 65, "rf_id": 34, "parent": 58, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::resolve_conj(Tensor(a) self) -> Tensor(a)",
+      "inputs": [[62,63,0,64,4,"cpu"]], "input_shapes": [[1,64]], "input_types": ["Tensor(float)"],
+      "outputs": [[62,63,0,64,4,"cpu"]], "output_shapes": [[1,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::resolve_conj", "id": 66, "rf_id": 35, "parent": 58, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::resolve_conj(Tensor(a) self) -> Tensor(a)",
+      "inputs": [[47,48,0,128,4,"cpu"]], "input_shapes": [[1,128]], "input_types": ["Tensor(float)"],
+      "outputs": [[47,48,0,128,4,"cpu"]], "output_shapes": [[1,128]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::addmm", "id": 58, "rf_id": 30, "parent": 53, "fw_parent": 0, "seq_id": 25, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::addmm(Tensor self, Tensor mat1, Tensor mat2, *, Scalar beta=1, Scalar alpha=1) -> Tensor",
+      "inputs": [[51,52,0,64,4,"cpu"],[47,48,0,128,4,"cpu"],[57,50,0,8192,4,"cpu"],1,1], "input_shapes": [[64],[1,128],[128,64],[],[]], "input_types": ["Tensor(float)","Tensor(float)","Tensor(float)","Int","Int"],
+      "outputs": [[62,63,0,64,4,"cpu"]], "output_shapes": [[1,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::linear", "id": 53, "rf_id": 26, "parent": 2, "fw_parent": 0, "seq_id": 24, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::linear(Tensor input, Tensor weight, Tensor? bias=None) -> Tensor",
+      "inputs": [[47,48,0,128,4,"cpu"],[49,50,0,8192,4,"cpu"],[51,52,0,64,4,"cpu"]], "input_shapes": [[1,128],[64,128],[64]], "input_types": ["Tensor(float)","Tensor(float)","Tensor(float)"],
+      "outputs": [[62,63,0,64,4,"cpu"]], "output_shapes": [[1,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::clamp_min", "id": 68, "rf_id": 37, "parent": 67, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::clamp_min(Tensor self, Scalar min) -> Tensor",
+      "inputs": [[62,63,0,64,4,"cpu"],0], "input_shapes": [[1,64],[]], "input_types": ["Tensor(float)","Int"],
+      "outputs": [[69,70,0,64,4,"cpu"]], "output_shapes": [[1,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::relu", "id": 67, "rf_id": 36, "parent": 2, "fw_parent": 0, "seq_id": 26, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::relu(Tensor self) -> Tensor",
+      "inputs": [[62,63,0,64,4,"cpu"]], "input_shapes": [[1,64]], "input_types": ["Tensor(float)"],
+      "outputs": [[69,70,0,64,4,"cpu"]], "output_shapes": [[1,64]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::as_strided", "id": 78, "rf_id": 41, "parent": 77, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::as_strided(Tensor(a) self, SymInt[] size, SymInt[] stride, SymInt? storage_offset=None) -> Tensor(a)",
+      "inputs": [[71,72,0,64,4,"cpu"],[64,1],[1,64],"<None>"], "input_shapes": [[1,64],[[],[]],[[],[]],[]], "input_types": ["Tensor(float)","GenericList[Int,Int]","GenericList[Int,Int]","None"],
+      "outputs": [[79,72,0,64,4,"cpu"]], "output_shapes": [[64,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::transpose", "id": 77, "rf_id": 40, "parent": 76, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::transpose.int(Tensor(a) self, int dim0, int dim1) -> Tensor(a)",
+      "inputs": [[71,72,0,64,4,"cpu"],0,1], "input_shapes": [[1,64],[],[]], "input_types": ["Tensor(float)","Int","Int"],
+      "outputs": [[79,72,0,64,4,"cpu"]], "output_shapes": [[64,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::t", "id": 76, "rf_id": 39, "parent": 75, "fw_parent": 0, "seq_id": 27, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::t(Tensor(a) self) -> Tensor(a)",
+      "inputs": [[71,72,0,64,4,"cpu"]], "input_shapes": [[1,64]], "input_types": ["Tensor(float)"],
+      "outputs": [[79,72,0,64,4,"cpu"]], "output_shapes": [[64,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::as_strided", "id": 82, "rf_id": 44, "parent": 81, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::as_strided(Tensor(a) self, SymInt[] size, SymInt[] stride, SymInt? storage_offset=None) -> Tensor(a)",
+      "inputs": [[73,74,0,1,4,"cpu"],[1,1],[1,1],"<None>"], "input_shapes": [[1],[[],[]],[[],[]],[]], "input_types": ["Tensor(float)","GenericList[Int,Int]","GenericList[Int,Int]","None"],
+      "outputs": [[83,74,0,1,4,"cpu"]], "output_shapes": [[1,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::expand", "id": 81, "rf_id": 43, "parent": 80, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::expand(Tensor(a) self, SymInt[] size, *, bool implicit=False) -> Tensor(a)",
+      "inputs": [[73,74,0,1,4,"cpu"],[1,1],false], "input_shapes": [[1],[[],[]],[]], "input_types": ["Tensor(float)","GenericList[Int,Int]","Bool"],
+      "outputs": [[83,74,0,1,4,"cpu"]], "output_shapes": [[1,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::copy_", "id": 86, "rf_id": 45, "parent": 80, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::copy_(Tensor(a!) self, Tensor src, bool non_blocking=False) -> Tensor(a!)",
+      "inputs": [[84,85,0,1,4,"cpu"],[83,74,0,1,4,"cpu"],false], "input_shapes": [[1,1],[1,1],[]], "input_types": ["Tensor(float)","Tensor(float)","Bool"],
+      "outputs": [[84,85,0,1,4,"cpu"]], "output_shapes": [[1,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::resolve_conj", "id": 87, "rf_id": 46, "parent": 80, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::resolve_conj(Tensor(a) self) -> Tensor(a)",
+      "inputs": [[84,85,0,1,4,"cpu"]], "input_shapes": [[1,1]], "input_types": ["Tensor(float)"],
+      "outputs": [[84,85,0,1,4,"cpu"]], "output_shapes": [[1,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::resolve_conj", "id": 88, "rf_id": 47, "parent": 80, "fw_parent": 0, "seq_id": -1, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::resolve_conj(Tensor(a) self) -> Tensor(a)",
+      "inputs": [[79,72,0,64,4,"cpu"]], "input_shapes": [[64,1]], "input_types": ["Tensor(float)"],
+      "outputs": [[79,72,0,64,4,"cpu"]], "output_shapes": [[64,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::addmm", "id": 80, "rf_id": 42, "parent": 75, "fw_parent": 0, "seq_id": 28, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::addmm(Tensor self, Tensor mat1, Tensor mat2, *, Scalar beta=1, Scalar alpha=1) -> Tensor",
+      "inputs": [[73,74,0,1,4,"cpu"],[69,70,0,64,4,"cpu"],[79,72,0,64,4,"cpu"],1,1], "input_shapes": [[1],[1,64],[64,1],[],[]], "input_types": ["Tensor(float)","Tensor(float)","Tensor(float)","Int","Int"],
+      "outputs": [[84,85,0,1,4,"cpu"]], "output_shapes": [[1,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::linear", "id": 75, "rf_id": 38, "parent": 2, "fw_parent": 0, "seq_id": 27, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::linear(Tensor input, Tensor weight, Tensor? bias=None) -> Tensor",
+      "inputs": [[69,70,0,64,4,"cpu"],[71,72,0,64,4,"cpu"],[73,74,0,1,4,"cpu"]], "input_shapes": [[1,64],[1,64],[1]], "input_types": ["Tensor(float)","Tensor(float)","Tensor(float)"],
+      "outputs": [[84,85,0,1,4,"cpu"]], "output_shapes": [[1,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::_softmax", "id": 90, "rf_id": 49, "parent": 89, "fw_parent": 0, "seq_id": 29, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::_softmax(Tensor self, int dim, bool half_to_float) -> Tensor",
+      "inputs": [[84,85,0,1,4,"cpu"],-1,false], "input_shapes": [[1,1],[],[]], "input_types": ["Tensor(float)","Int","Bool"],
+      "outputs": [[21,91,0,1,4,"cpu"]], "output_shapes": [[1,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "aten::softmax", "id": 89, "rf_id": 48, "parent": 2, "fw_parent": 0, "seq_id": 29, "scope": 0, "tid": 1, "fw_tid": 0, "op_schema": "aten::softmax.int(Tensor self, int dim, ScalarType? dtype=None) -> Tensor",
+      "inputs": [[84,85,0,1,4,"cpu"],-1,"<None>"], "input_shapes": [[1,1],[],[]], "input_types": ["Tensor(float)","Int","None"],
+      "outputs": [[21,91,0,1,4,"cpu"]], "output_shapes": [[1,1]], "output_types": ["Tensor(float)"]
+    },
+    {
+      "name": "[pytorch|profiler|execution_trace|process]", "id": 1, "rf_id": 0, "parent": 1, "fw_parent": 0, "seq_id": -1, "scope": 7, "tid": 0, "fw_tid": 0, "op_schema": "",
+      "inputs": [], "input_shapes": [], "input_types": [],
+      "outputs": [], "output_shapes": [], "output_types": []
+    }
+  ],
+  "finish_ts": 3999448077
+}
